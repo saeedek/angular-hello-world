@@ -5,6 +5,7 @@ import { CoursesService } from './courses.service';
     selector: 'courses',
     template: `
         <img [src]="imageUrl" />
+        <fa-icon [icon]="['far', 'star']"></fa-icon>
         <input [(ngModel)]="email" (keyup.enter)="onKeyUp()" />
         <button (click)="onSave($event)" class="btn btn-primary">Save</button> <br />
         <button class="btn btn-primary" [class.active]="isActive">Class Binding</button>  <br />
@@ -16,7 +17,6 @@ import { CoursesService } from './courses.service';
         {{course.price | currency:'AUD':'code':'3.2-2'}} <br />
         {{course.releaseDate | date:'shortDate'}} <br />
         {{ text | summary:10}}
-
     `
 })
 
