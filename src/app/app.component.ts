@@ -16,4 +16,10 @@ export class AppComponent {
   onFavoriteChanged(newState:FavoriteChangedEventArgs){
     console.log("Favorite changed to:",newState.newValue)
   }
+  tweet={
+    text : "This is a tweet",
+    isLiked : false,
+    likeCount : 0
+  };
+
 }

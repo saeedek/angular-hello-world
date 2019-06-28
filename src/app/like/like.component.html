@@ -1,0 +1,7 @@
+<fa-icon 
+    class="heart"
+    [class.liked] = "isLiked"
+    (click)="onClick()"
+    [icon]="['fas','heart']">
+</fa-icon>
+<span>{{likeCount}}</span>
