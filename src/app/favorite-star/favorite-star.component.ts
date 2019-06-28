@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
   //inputs: ["isFavorite"] bad way to make input properties.
 })
 export class FavoriteStarComponent implements OnInit {
-  @Input() isFavorite: boolean;
+  @Input('is-favorite') isFavorite: boolean; //gave it a nickname so it doesn't break the contract in this com's html and other consumers
   //Input() isFavorite = false; one way to declare input
   constructor() { }
 
