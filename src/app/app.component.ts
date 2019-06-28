@@ -21,6 +21,6 @@ export class AppComponent {
     isLiked : false,
     likeCount : 0
   };
-  courses = [];
+  courses = [1,2];
 
 }
