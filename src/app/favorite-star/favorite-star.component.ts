@@ -8,15 +8,17 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class FavoriteStarComponent implements OnInit {
   @Input('is-favorite') isFavorite: boolean; //gave it a nickname so it doesn't break the contract in this com's html and other consumers
-  //Input() isFavorite = false; one way to declare input
-  @Output() change =new EventEmitter();
+  @Output('change') change =new EventEmitter();
   constructor() { }
 
   ngOnInit() {
   }
   onClick(){
     this.isFavorite = !this.isFavorite;
-    this.change.emit();
+    this.change.emit({newValue : this.isFavorite});
   }
 
+}
+export interface FavoriteChangedEventArgs{
+  newValue : boolean
 }
