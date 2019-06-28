@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { FavoriteStarComponent } from './favorite-star/favorite-star.component'
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
+import { PanelComponent } from './panel/panel.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { far } from '@fortawesome/free-regular-svg-icons';
     CoursesComponent,
     CourseComponent,
     SummaryPipe,
-    FavoriteStarComponent
+    FavoriteStarComponent,
+    PanelComponent
   ],
   imports: [
     BrowserModule,
