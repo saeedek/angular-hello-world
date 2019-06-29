@@ -50,9 +50,17 @@
     </li>
 </ul> -->
 <!--  -->
-<button (click)="loadData()">Load</button>
+<!-- <button (click)="loadData()">Load</button>
 <ul>
     <li *ngFor="let person of people; index as i; trackBy:trackCourse">
         {{i}}-{{person.name}}
     </li>
-</ul>
+</ul> -->
+<!--  -->
+<span
+    [ngClass]="{
+        'red' : isRed,
+        'blue' : !isRed
+    }"
+
+>ngClass usage</span>

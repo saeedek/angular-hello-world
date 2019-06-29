@@ -52,5 +52,7 @@ export class AppComponent {
   trackCourse(index,person){
     return person ? person.id : undefined;
   }
+  //
+  isRed = false;
 }
 
