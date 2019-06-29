@@ -13,16 +13,18 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import { PanelComponent } from './panel/panel.component';
 import { LikeComponent } from './like/like.component';
+import { InputFormatDirective } from './input-format.directive';
 
 @NgModule({
-  declarations: [
+  declarations: [ //components,pipes,directives
     AppComponent,
     CoursesComponent,
     CourseComponent,
     SummaryPipe,
     FavoriteStarComponent,
     PanelComponent,
-    LikeComponent
+    LikeComponent,
+    InputFormatDirective
   ],
   imports: [
     BrowserModule,
