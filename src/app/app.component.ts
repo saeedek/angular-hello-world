@@ -40,5 +40,14 @@ export class AppComponent {
   onChange(course){
     course.name = "NEW NAME";
   }
+  //
+  people;
+  loadData(){
+    this.people = [
+      {id: 1, name:"Saeed"},
+      {id: 2, name:"Ali"},
+      {id: 3, name:"Mehdi"}
+    ]
+  }
 }
 

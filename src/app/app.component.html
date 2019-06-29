@@ -40,11 +40,19 @@
     <div *ngSwitchCase="'list'">List View Content</div>
     <div *ngSwitchDefault>Otherwise</div>
 </div> -->
-<button (click)="onAdd()">Add</button>
+<!--  -->
+<!-- <button (click)="onAdd()">Add</button>
 <ul>
     <li *ngFor="let course of courses; index as i; even as isEven">
         {{i}}-{{course.name}} <span *ngIf="isEven">(EVEN)</span>
         <button (click)="onRemove(course);">Remove</button>
         <button (click)="onChange(course);">Change</button>
+    </li>
+</ul> -->
+<!--  -->
+<button (click)="loadData()">Load</button>
+<ul>
+    <li *ngFor="let person of people; index as i; trackBy:trackCourse">
+        {{i}}-{{person.name}}
     </li>
 </ul>
