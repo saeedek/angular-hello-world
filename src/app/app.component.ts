@@ -56,5 +56,12 @@ export class AppComponent {
   isRed = false;
   //ngStyle
   canSave = false;
+  //Safe traversal
+  task = { //if assignee is null for example we get error.we can use ngIf or we use STO
+    title: 'Review applications',
+    assignee:{
+      name : 'John Smith'
+    }
+  }
 }
 
