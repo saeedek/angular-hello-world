@@ -49,5 +49,8 @@ export class AppComponent {
       {id: 3, name:"Mehdi"}
     ]
   }
+  trackCourse(index,person){
+    return person ? person.id : undefined;
+  }
 }
 
