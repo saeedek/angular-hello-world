@@ -24,7 +24,7 @@ export class AppComponent {
   //courses = [1,2];
   //
   viewMode = 'map';
-  //
+  //ngFor
   courses = [
     { id: 1, name: 'course1'},
     { id: 2, name: 'course2'},
@@ -40,7 +40,7 @@ export class AppComponent {
   onChange(course){
     course.name = "NEW NAME";
   }
-  //
+  //ngTrack
   people;
   loadData(){
     this.people = [
@@ -52,7 +52,9 @@ export class AppComponent {
   trackCourse(index,person){
     return person ? person.id : undefined;
   }
-  //
+  //ngClass
   isRed = false;
+  //ngStyle
+  canSave = false;
 }
 

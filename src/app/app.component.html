@@ -57,10 +57,17 @@
     </li>
 </ul> -->
 <!--  -->
-<span
+<!-- <span
     [ngClass]="{
         'red' : isRed,
         'blue' : !isRed
     }"
 
->ngClass usage</span>
+>ngClass usage</span> -->
+<!-- ngStyle -->
+<button
+    [style.backgroundColor]="canSave ? 'blue': 'gray'"
+    [style.color] = "canSave ? 'white': 'black'"
+    [style.fontWeigth] = "canSave ? 'bold' : 'normal'" 
+
+>Save</button>
