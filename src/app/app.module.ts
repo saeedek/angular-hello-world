@@ -14,6 +14,7 @@ import { far } from '@fortawesome/free-regular-svg-icons';
 import { PanelComponent } from './panel/panel.component';
 import { LikeComponent } from './like/like.component';
 import { InputFormatDirective } from './input-format.directive';
+import { ZippyComponent } from './zippy/zippy.component';
 
 @NgModule({
   declarations: [ //components,pipes,directives
@@ -24,7 +25,8 @@ import { InputFormatDirective } from './input-format.directive';
     FavoriteStarComponent,
     PanelComponent,
     LikeComponent,
-    InputFormatDirective
+    InputFormatDirective,
+    ZippyComponent
   ],
   imports: [
     BrowserModule,
