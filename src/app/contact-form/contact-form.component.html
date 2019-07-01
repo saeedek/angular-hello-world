@@ -1,0 +1,15 @@
+<form>
+    <div class="form-group">
+        <label for="firstName">Firstname</label>
+        <input required ngModel #firstName="ngModel" (change)="log(firstName)" type="text" name="firstName" id="firstName" class="form-control">
+        <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">Firstname is required</div>
+    </div>
+    <div class="form-group">
+        <label for="comment">Comment</label>
+        <textarea required ngModel #comment="ngModel" name="comment" id="comment" cols="30" rows="10" class="form-control">
+
+        </textarea>
+        <div class="alert alert-danger" *ngIf="comment.touched && !comment.valid">comment is required</div>
+    </div>
+    <button class="btn btn-primary">Submit</button>
+</form>
