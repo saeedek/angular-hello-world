@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { CoursesComponent } from './courses.component';
 import { CourseComponent } from './course/course.component';
 import { CoursesService } from './courses.service';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FavoriteStarComponent } from './favorite-star/favorite-star.component'
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
@@ -17,6 +17,7 @@ import { InputFormatDirective } from './input-format.directive';
 import { ZippyComponent } from './zippy/zippy.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { CourseFormComponent } from './course-form/course-form.component';
+import { SignupFormComponent } from './signup-form/signup-form.component';
 
 @NgModule({
   declarations: [ //components,pipes,directives
@@ -30,12 +31,14 @@ import { CourseFormComponent } from './course-form/course-form.component';
     InputFormatDirective,
     ZippyComponent,
     ContactFormComponent,
-    CourseFormComponent
+    CourseFormComponent,
+    SignupFormComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    ReactiveFormsModule
   ],
   providers: [CoursesService],
   bootstrap: [AppComponent]
