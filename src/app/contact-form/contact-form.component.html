@@ -1,19 +1,53 @@
-<form>
+<form #f="ngForm" (ngSubmit)="submit(f)">
+  <div ngModelGroup="contact" #contact="ngModelGroup">
     <div class="form-group">
-        <label for="firstName">Firstname</label>
-        <input required ngModel minlength="3" maxlength="10" pattern="banana" #firstName="ngModel" (change)="log(firstName)" type="text" name="firstName" id="firstName" class="form-control">
-        <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">
-            <div *ngIf="firstName.errors.required">First name is required</div>
-            <div *ngIf="firstName.errors.minlength">First name should be minimum {{firstName.errors.minlength.requiredLength}} characters</div>
-            <div *ngIf="firstName.errors.pattern">First name doesn't match the pattern</div>
+      <label for="firstName">Firstname</label>
+      <input
+        required
+        minlength="3"
+        maxlength="10"
+        pattern="banana"
+        ngModel
+        #firstName="ngModel"
+        type="text"
+        name="firstName"
+        id="firstName"
+        class="form-control"
+      />
+      <div
+        class="alert alert-danger"
+        *ngIf="firstName.touched && !firstName.valid"
+      >
+        <div *ngIf="firstName.errors.required">
+          First name is required
         </div>
+        <div *ngIf="firstName.errors.minlength">
+          First name should be minimum
+          {{ firstName.errors.minlength.requiredLength }} characters
+        </div>
+        <div *ngIf="firstName.errors.pattern">
+          First name doesn't match the pattern
+        </div>
+      </div>
     </div>
-    <div class="form-group">
-        <label for="comment">Comment</label>
-        <textarea required ngModel #comment="ngModel" name="comment" id="comment" cols="30" rows="10" class="form-control">
+  </div>
 
-        </textarea>
-        <div class="alert alert-danger" *ngIf="comment.touched && !comment.valid">comment is required</div>
+  <div class="form-group">
+    <label for="comment">Comment</label>
+    <textarea
+      required
+      ngModel
+      #comment="ngModel"
+      name="comment"
+      id="comment"
+      cols="30"
+      rows="10"
+      class="form-control"
+    >
+    </textarea>
+    <div class="alert alert-danger" *ngIf="comment.touched && !comment.valid">
+      comment is required
     </div>
-    <button class="btn btn-primary">Submit</button>
+  </div>
+  <button class="btn btn-primary">Submit</button>
 </form>
