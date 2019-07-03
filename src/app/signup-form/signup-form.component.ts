@@ -23,4 +23,9 @@ export class SignupFormComponent {
   get password(){
     return this.form.get('password')
   }
+  login(){
+    this.form.setErrors({
+      invalidLogin : true
+    });
+  }
 }
