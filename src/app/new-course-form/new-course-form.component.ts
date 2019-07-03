@@ -15,8 +15,9 @@ export class NewCourseFormComponent {
   //   }),
   //   topics: new FormArray([])
   // })
+  form;
   constructor(fb: FormBuilder){
-    fb.group({
+    this.form = fb.group({
       name: ['',Validators.required],
       contact : fb.group({
         email: [],
