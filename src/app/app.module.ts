@@ -20,6 +20,9 @@ import { CourseFormComponent } from './course-form/course-form.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
 import { NewCourseFormComponent } from './new-course-form/new-course-form.component';
 import { ForgetPasswordFormComponent } from './forget-password-form/forget-password-form.component';
+import { PostsComponent } from './posts/posts.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [ //components,pipes,directives
@@ -36,13 +39,15 @@ import { ForgetPasswordFormComponent } from './forget-password-form/forget-passw
     CourseFormComponent,
     SignupFormComponent,
     NewCourseFormComponent,
-    ForgetPasswordFormComponent
+    ForgetPasswordFormComponent,
+    PostsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     FontAwesomeModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [CoursesService],
   bootstrap: [AppComponent]
