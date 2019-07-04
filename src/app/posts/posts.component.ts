@@ -8,10 +8,24 @@ import { HttpClient } from '@angular/common/http';
 })
 export class PostsComponent {
   posts : any[]
-  constructor(client : HttpClient){
-    client.get("https://jsonplaceholder.typicode.com/posts")
+  private url = "https://jsonplaceholder.typicode.com/posts"
+  constructor(private client : HttpClient){
+    client.get(this.url)
     .subscribe((response:any[])=>{
       this.posts = response;
+    })
+  }
+  createPost(input: HTMLInputElement){
+    let newPost={
+      title: input.value
+    }
+    input.value = ""
+    this.client.post(this.url,
+      JSON.stringify(newPost)
+    ).subscribe(response =>{
+      newPost['id'] = response['id'];
+      this.posts.splice(0,0,newPost);
+      console.log(newPost)
     })
   }
 
