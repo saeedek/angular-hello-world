@@ -1,6 +1,6 @@
 import { SummaryPipe } from './summary.pipe';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ErrorHandler } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { AppComponent } from './app.component';
@@ -23,6 +23,7 @@ import { ForgetPasswordFormComponent } from './forget-password-form/forget-passw
 import { PostsComponent } from './posts/posts.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PostService } from './services/post.service';
+import { AppErrorHandler } from './common/app-error-handler';
 
 
 @NgModule({
@@ -50,8 +51,13 @@ import { PostService } from './services/post.service';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [CoursesService,
-    PostService],
+  providers: [
+    CoursesService,
+    PostService,
+    {
+      provide:ErrorHandler,
+      useClass : AppErrorHandler
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { 
