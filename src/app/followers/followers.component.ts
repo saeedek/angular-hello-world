@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FollowerService } from '../services/follower.service';
-import { AppError } from '../common/app-error';
-
+import { ActivatedRoute } from '@angular/router';
+import { combineLatest } from 'rxjs';
 @Component({
   selector: 'followers',
   templateUrl: './followers.component.html',
@@ -9,9 +9,19 @@ import { AppError } from '../common/app-error';
 })
 export class FollowersComponent implements OnInit {
   followers : any[];
-  constructor(private followerService : FollowerService) { }
+  constructor(private followerService : FollowerService,private route : ActivatedRoute) { }
 
   ngOnInit() {
+    combineLatest([
+      this.route.paramMap,
+      this.route.queryParamMap
+    ]).subscribe(combined=>{
+      let id = combined[0].get('id')
+      let page = combined[1].get('page')
+
+      this.followerService.getAll()
+    })
+    
     this.followerService.getAll().subscribe(
       response=>{
         this.followers = response;
@@ -21,6 +31,7 @@ export class FollowersComponent implements OnInit {
         console.log("An unexpected error occured")
       }
     )
+    
   }
 
 }
