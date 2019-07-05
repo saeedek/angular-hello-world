@@ -4,7 +4,7 @@
         <img [src]="follower.avatar_url" alt="">
     </div>
     <div class="media-body">
-        <h4 class="media-heading">{{follower.login  }}</h4>
+        <h4 [routerLink]="['/followers',follower.id]" class="media-heading">{{follower.login  }}</h4>
         <a [href]="follower.html_url">{{follower.html_url}}</a>
     </div>
 </div>
