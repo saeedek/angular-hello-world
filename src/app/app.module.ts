@@ -24,6 +24,8 @@ import { PostsComponent } from './posts/posts.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PostService } from './services/post.service';
 import { AppErrorHandler } from './common/app-error-handler';
+import { FollowersComponent } from './followers/followers.component';
+import { FollowerService } from './services/follower.service';
 
 
 @NgModule({
@@ -42,7 +44,8 @@ import { AppErrorHandler } from './common/app-error-handler';
     SignupFormComponent,
     NewCourseFormComponent,
     ForgetPasswordFormComponent,
-    PostsComponent
+    PostsComponent,
+    FollowersComponent
   ],
   imports: [
     BrowserModule,
@@ -54,6 +57,7 @@ import { AppErrorHandler } from './common/app-error-handler';
   providers: [
     CoursesService,
     PostService,
+    FollowerService,
     {
       provide:ErrorHandler,
       useClass : AppErrorHandler

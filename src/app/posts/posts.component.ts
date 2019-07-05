@@ -35,7 +35,7 @@ export class PostsComponent implements OnInit {
       newPost['id'] = response['id'];
       
     },(error: AppError) =>{
-      this.posts.splice(0,1);
+      this.posts.shift();
       if(error instanceof BadInputError){
         alert("bad input error")
       }else{
