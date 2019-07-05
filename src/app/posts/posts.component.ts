@@ -18,7 +18,7 @@ export class PostsComponent implements OnInit {
       }
     )
   }
-  posts : any[]
+  posts : any
   
   constructor(private postService : PostService){
     
