@@ -27,11 +27,15 @@ export class PostsComponent implements OnInit {
     let newPost={
       title: input.value
     }
+    this.posts.splice(0,0,newPost);
+
     input.value = ""
+
     this.postService.create(newPost).subscribe(response =>{
       newPost['id'] = response['id'];
-      this.posts.splice(0,0,newPost);
+      
     },(error: AppError) =>{
+      this.posts.splice(0,1);
       if(error instanceof BadInputError){
         alert("bad input error")
       }else{
