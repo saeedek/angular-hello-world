@@ -11,7 +11,7 @@ import { BadInputError } from '../common/bad-input-error';
 })
 export class PostsComponent implements OnInit {
   ngOnInit(): void {
-    this.postService.getPosts().subscribe(
+    this.postService.getAll().subscribe(
       response =>{
         console.log(response);
         this.posts = response;
@@ -28,7 +28,7 @@ export class PostsComponent implements OnInit {
       title: input.value
     }
     input.value = ""
-    this.postService.createPost(newPost).subscribe(response =>{
+    this.postService.create(newPost).subscribe(response =>{
       newPost['id'] = response['id'];
       this.posts.splice(0,0,newPost);
     },(error: AppError) =>{
@@ -45,7 +45,7 @@ export class PostsComponent implements OnInit {
     //   JSON.stringify(post)
     //   )
     
-      this.postService.updatePost(post)
+      this.postService.update(post)
         .subscribe(
           response=>{
             console.log(response);
@@ -53,7 +53,7 @@ export class PostsComponent implements OnInit {
         )
   }
   deletePost(post){
-    this.postService.deletePost(3000).subscribe(response=>{
+    this.postService.delete(3000).subscribe(response=>{
       console.log(response);
       let index = this.posts.indexOf(post);
       this.posts.splice(index,1);
